@@ -1,8 +1,12 @@
+//Libs/Comps
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider as PaperProvider } from 'react-native-paper';
 
+//Screens
 import HomeScreen from './screens/HomeScreen';
+import DetailsScreen from './screens/DetailsScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
  
@@ -19,6 +23,8 @@ export default function App() {
           }}
         >
           <Tab.Screen name="Home"     component={HomeScreen} />
+          <Tab.Screen name="Details"     component={DetailsScreen} />
+          <Tab.Screen name="Settings"     component={SettingsScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>
