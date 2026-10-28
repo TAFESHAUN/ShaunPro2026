@@ -34,6 +34,11 @@ const MOCKITEMS = [
         title: "Plant Book", 
         description: "A book about household plants"
     },
+    {
+        id: "7", 
+        title: "Movie Event", 
+        description: "Some EHC movie event placeholder"
+    },
     
 ];
 

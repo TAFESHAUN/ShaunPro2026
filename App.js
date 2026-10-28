@@ -2,6 +2,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //Screens
 import HomeScreen from './screens/HomeScreen';
@@ -9,8 +10,23 @@ import DetailsScreen from './screens/DetailsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
-// #TODO FIX by adding the stack nav
- 
+const Stack = createNativeStackNavigator();
+
+function HomeStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle:  { backgroundColor: "#6200ee" },
+        headerTintColor: "#fff",
+      }}
+    >
+      <Stack.Screen name="Home"    component={HomeScreen} />
+      <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+    </Stack.Navigator>
+  );
+}
+
+
 export default function App() {
   return (
     <PaperProvider>
@@ -31,9 +47,19 @@ export default function App() {
             },
           }}
         >
-          <Tab.Screen name="Home"     component={HomeScreen} />
-          <Tab.Screen name="Details"     component={DetailsScreen} />
-          <Tab.Screen name="Settings"     component={SettingsScreen} />
+          <Tab.Screen
+            name="HomeTab"
+            component={HomeStack}
+            options={{ headerShown: false }}
+          />
+          <Tab.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{
+              headerStyle:     { backgroundColor: "#6200ee" },
+              headerTintColor: "#fff",
+            }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </PaperProvider>

@@ -1,19 +1,21 @@
 import { View, StyleSheet } from 'react-native';
-import { Text, Card} from 'react-native-paper'
+import { Text, Card, TextInput, ActivityIndicator} from 'react-native-paper'
 
-export default function DetailsScreen(route, navigation) {
-    const { passedItem } = route.params;
+export default function DetailsScreen({route, navigation}) {
+    const { item } = route.params;
     return (
         <View style={styles.container}>
             <Text variant='headlineMedium' style={styles.title}>
-                {passedItem.title}
+                {item.title}
             </Text>
             <Card>
-                <Card.Title title="Title" /> 
+                <Card.Title title={item.title} />
                 <Card.Content>
-                    <Text>Content</Text>
-                </Card.Content> 
-            </Card> 
+                    <Text>{item.description}</Text>
+                </Card.Content>
+            </Card>
+            <TextInput label="Name" /> 
+            <ActivityIndicator animating={true} size={250}/> 
         </View>
     );
 }
