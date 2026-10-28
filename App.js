@@ -9,6 +9,7 @@ import DetailsScreen from './screens/DetailsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
+// #TODO FIX by adding the stack nav
  
 export default function App() {
   return (
@@ -20,6 +21,14 @@ export default function App() {
             tabBarInactiveTintColor: '#999',
             headerStyle: { backgroundColor: '#6200ee' },
             headerTintColor: '#fff',
+                tabBarStyle: {
+              height: 70,        
+              paddingBottom: 5,
+              paddingTop: 6,
+            },
+            tabBarLabelStyle: {
+              fontSize: 12,
+            },
           }}
         >
           <Tab.Screen name="Home"     component={HomeScreen} />

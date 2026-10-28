@@ -1,12 +1,19 @@
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'react-native-paper'
+import { Text, Card} from 'react-native-paper'
 
-export default function DetailsScreen() {
+export default function DetailsScreen(route, navigation) {
+    const { passedItem } = route.params;
     return (
         <View style={styles.container}>
             <Text variant='headlineMedium' style={styles.title}>
-                Details Placeholder
+                {passedItem.title}
             </Text>
+            <Card>
+                <Card.Title title="Title" /> 
+                <Card.Content>
+                    <Text>Content</Text>
+                </Card.Content> 
+            </Card> 
         </View>
     );
 }
