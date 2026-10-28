@@ -7,37 +7,44 @@ const MOCKITEMS = [
     {
         id: "1", 
         title: "Andventure Book", 
-        description: "The hero went on an adventure"
+        description: "The hero went on an adventure",
+        total: 10
     },
     {
         id: "2", 
         title: "Maths Book", 
-        description: "1 + 1 is 2"
+        description: "1 + 1 is 2",
+        total: 10
     },
     {
         id: "3", 
         title: "Sci-Fi Book", 
-        description: "The hero went to space"
+        description: "The hero went to space",
+        total: 10
     },
     {
         id: "4", 
         title: "Loruem Ipsium Book", 
-        description: "I don't remember my Loruem Ipsium...Whoops"
+        description: "I don't remember my Loruem Ipsium...Whoops",
+        total: 10
     },
     {
         id: "5", 
         title: "Cat and Dog Book", 
-        description: "A book about household pets"
+        description: "A book about household pets",
+        total: 10
     },
     {
         id: "6", 
         title: "Plant Book", 
-        description: "A book about household plants"
+        description: "A book about household plants",
+        total: 10
     },
     {
         id: "7", 
         title: "Movie Event", 
-        description: "Some EHC movie event placeholder"
+        description: "Some EHC movie event placeholder",
+        total: 10
     },
     
 ];
@@ -58,6 +65,7 @@ export default function HomeScreen({ navigation }){
                         <Card.Title title={item.title} />
                         <Card.Content>
                             <Text variant='bodyMedium'>{item.description}</Text>
+                            <Text style={styles.totalbooks}>Spots remaining: {item.total}</Text>
                         </Card.Content>
                     </Card>
                 ))}
@@ -85,5 +93,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         elevation: 3,
         backgroundColor: '#434242',
+    },
+    totalbooks: {
+        color: 'hotpink',
+        fontSize: 'large'
     }
 })
